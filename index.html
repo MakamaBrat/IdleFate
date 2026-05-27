@@ -24,9 +24,9 @@
         <div id="unity-build-title">Idle Fate</div>
       </div>
     </div>
- 
+
     <!-- ТЕСТОВА КНОПКА — видали після перевірки -->
-    <button onclick="testTelegram()" style="position:fixed;top:0;left:0;z-index:9999;font-size:20px;padding:10px;background:red;color:white;">TEST</button>
+    <button onclick="testTelegram()" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:9999;font-size:24px;padding:20px 40px;background:red;color:white;border:none;border-radius:12px;">TEST TELEGRAM</button>
     <script>
     function testTelegram() {
       if (typeof window.Telegram === 'undefined') {
@@ -42,10 +42,10 @@
     }
     </script>
     <!-- КІНЕЦЬ ТЕСТУ -->
- 
+
     <script>
       var canvas = document.querySelector("#unity-canvas");
- 
+
       function unityShowBanner(msg, type) {
         var warningBanner = document.querySelector("#unity-warning");
         function updateBannerVisibility() {
@@ -64,7 +64,7 @@
         }
         updateBannerVisibility();
       }
- 
+
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/GWEB.loader.js";
       var config = {
@@ -78,7 +78,7 @@
         productVersion: "0.1.0",
         showBanner: unityShowBanner,
       };
- 
+
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         var meta = document.createElement('meta');
         meta.name = 'viewport';
@@ -90,9 +90,9 @@
         canvas.style.width = "960px";
         canvas.style.height = "600px";
       }
- 
+
       document.querySelector("#unity-loading-bar").style.display = "block";
- 
+
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -107,7 +107,7 @@
           alert(message);
         });
       };
- 
+
       document.body.appendChild(script);
     </script>
   </body>
