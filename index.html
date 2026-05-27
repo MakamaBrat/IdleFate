@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity Web Player | Idle Fate</title>
@@ -9,6 +8,9 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+    <!-- Telegram SDK першим в body -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -34,9 +36,9 @@
       } else if (!window.Telegram.WebApp) {
         alert('ПОМИЛКА: window.Telegram.WebApp = undefined');
       } else {
-        alert('OK! Telegram доступний. Версія: ' + window.Telegram.WebApp.version);
+        alert('OK! Версія: ' + window.Telegram.WebApp.version);
         window.Telegram.WebApp.openInvoice('https://t.me/$teKss98juEjKGgAAhZZpRzo0PHk', function(status) {
-          alert('Статус оплати: ' + status);
+          alert('Статус: ' + status);
         });
       }
     }
